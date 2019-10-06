@@ -8,9 +8,9 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
-import android.support.v4.app.NotificationCompat;
-import android.support.v4.content.WakefulBroadcastReceiver;
 import android.util.Log;
+
+import androidx.core.app.NotificationCompat;
 
 import com.google.firebase.messaging.RemoteMessage;
 
@@ -102,6 +102,7 @@ public class NotificationReceiver extends BroadcastReceiver {
         } catch (JSONException e) {
             e.printStackTrace();
         }
+        resultIntent.setAction(ctx.getPackageName() + EMSIntents.EMS_OPEN_NOTIFICATION);
         PendingIntent resultPendingIntent = PendingIntent.getBroadcast(ctx, 0, resultIntent, PendingIntent.FLAG_UPDATE_CURRENT);
 
         mBuilder.setContentIntent(resultPendingIntent);
@@ -110,7 +111,6 @@ public class NotificationReceiver extends BroadcastReceiver {
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
             NotificationChannel channel = new NotificationChannel(channelId,channelName,NotificationManager.IMPORTANCE_DEFAULT);
-            channel.setDescription(body);
 
             mNotifyMgr.createNotificationChannel(channel);
             mBuilder.setChannelId(channelId);
