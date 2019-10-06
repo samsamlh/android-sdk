@@ -5,8 +5,9 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.v4.app.NotificationManagerCompat;
 import android.util.Log;
+
+import androidx.core.app.NotificationManagerCompat;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.NoConnectionError;
@@ -17,7 +18,6 @@ import com.android.volley.toolbox.StringRequest;
 
 import org.json.JSONException;
 import org.json.JSONObject;
-
 import java.security.InvalidParameterException;
 import java.util.HashMap;
 import java.util.Map;
