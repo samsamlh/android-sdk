@@ -1,21 +1,9 @@
 package experian.mobilesdk;
 
-
-import android.app.NotificationManager;
-import android.app.PendingIntent;
-import android.content.BroadcastReceiver;
-import android.content.Context;
 import android.content.Intent;
-import android.content.IntentFilter;
-import android.support.v4.app.NotificationCompat;
-import android.support.v4.content.LocalBroadcastManager;
-import android.support.v4.content.WakefulBroadcastReceiver;
 import android.util.Log;
-
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
-
-import org.json.JSONException;
 import org.json.JSONObject;
 
 /**
@@ -25,6 +13,18 @@ import org.json.JSONObject;
 public class MessagingService extends FirebaseMessagingService {
 
     private static final String TAG = "EMS:MessagingService";
+
+    @Override
+    public void onNewToken(String token) {
+        try {
+            EMSMobileSDK.Default().initFromContext(getApplicationContext());
+        }
+        catch (Exception e)
+        {
+            Log.e(TAG,"Error initializing EMSMobileSDK solely from application context. The SDK must first be initialized with customer mobile application settings");
+        }
+        EMSMobileSDK.Default().setToken(getApplicationContext(), token);
+    }
 
     //This event fires when a Push Notification is received from Firebase and the application is running or in the background.
     @Override
