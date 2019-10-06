@@ -14,14 +14,7 @@
             </intent-filter>
         </service>
 
-        <service
-            android:name=".IDService">
-            <intent-filter>
-                <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
-            </intent-filter>
-        </service>
-
-        <receiver android:name="NotificationReceiver" android:enabled="true">
+        <receiver android:name=".NotificationReceiver" android:enabled="true">
             <intent-filter>
                 <action android:name="com.experian.mobilesdk.EMS_SHOW_NOTIFICATION" />
                 <action android:name="com.experian.mobilesdk.EMS_OPEN_NOTIFICATION" />
