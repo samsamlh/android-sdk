@@ -5,20 +5,17 @@
         android:supportsRtl="true">
 
 
-
         <service
-            android:name=".MessagingService">
+            android:name=".MessagingService"
+            android:exported="false">
             <intent-filter>
-                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
-                <category android:name="android.intent.category.DEFAULT" />
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
         </service>
-
         <receiver android:name=".NotificationReceiver" android:enabled="true">
             <intent-filter>
-                <action android:name="com.experian.mobilesdk.EMS_SHOW_NOTIFICATION" />
-                <action android:name="com.experian.mobilesdk.EMS_OPEN_NOTIFICATION" />
-                <category android:name="android.intent.category.DEFAULT" />
+                <action android:name="EMS_SHOW_NOTIFICATION" />
+                <action android:name="EMS_OPEN_NOTIFICATION" />
             </intent-filter>
         </receiver>
     </application>
