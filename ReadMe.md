@@ -69,12 +69,14 @@ A Firebase project is a collection of apps that can use a variety of Google API'
 
 **Note:** On the next screen gives instructions on how to finish integrating Firebase into your app. These instructions will be amended with additional information below. Click **Continue**, then **Finish** on the last screen to add the app to the Firebase Project. 
 
-6. In Android Studio, open the Project Gradle script labeled **build.gradle (Project: yourProject)** and add **classpath 'com.google.gms:google-services:3.0.0'** the to the project dependencies.
+6. In Android Studio, open the Project Gradle script labeled **build.gradle (Project: yourProject)** and add **classpath 'com.google.gms:google-services:4.3.2'** the to the project dependencies.
 
 ```json
-dependencies {
-		classpath 'com.android.tools.build:gradle:3.1.3'
-		classpath 'com.google.gms:google-services:4.0.1'
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.5.0'
+        classpath 'com.google.gms:google-services:4.3.2'
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
 ...
 ```
 
@@ -91,25 +93,22 @@ implementation 'org.apache.directory.studio:org.apache.commons.io:2.4'
 
 ```json
 dependencies {
-    compile fileTree(include: ['*.jar'], dir: 'libs')
-    androidTestImplementation('com.android.support.test.espresso:espresso-core:2.2.2', {
-        exclude group: 'com.android.support', module: 'support-annotations'
-    })
-
-    implementation 'com.android.support:appcompat-v7:26.1.0'
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'androidx.appcompat:appcompat:1.0.2'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    implementation 'com.android.volley:volley:1.1.1'
+    implementation group: 'commons-io', name: 'commons-io', version: '2.5'
+    implementation 'com.google.firebase:firebase-messaging:20.0.0'
     testImplementation 'junit:junit:4.12'
-
-    releaseImplementation "com.experian.mobilesdk:EMSMobileSDK:$sdk_version"
-
-    implementation 'com.google.firebase:firebase-core:11.8.0'
-    implementation 'com.google.firebase:firebase-messaging:11.8.0'
-    implementation 'com.android.volley:volley:1.0.0'
+    androidTestImplementation 'androidx.test:runner:1.2.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    implementation project(path: ':EMSMobileSDK-release')
 }
 
 apply plugin: 'com.google.gms.google-services'
 ```
 
-9. On the root of the app module, copy and paste the **GoogleServices.json** file that was downloaded from Firebase.
+9. On the root of the app module, copy and paste the **google-services.json** file that was downloaded from Firebase.
 
 ![GoogleServices.json](images/google-services-in-app-root.png)
 
