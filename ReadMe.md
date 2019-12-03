@@ -117,6 +117,32 @@ apply plugin: 'com.google.gms.google-services'
 
 11. Right click on the app module and select **Open Module Settings**. Click the **Dependencies** tab, click the **+** icon, then select **Module Dependency**.
 
+## Get the .aar file containing the Marketing Suite SDK 
+
+1. From the welcome screen of Android Studio, click 'Check out project from Version Control' and 'Git'
+
+![VC_Git](images/1_VC_git.png)
+
+2. Add the github URL to clone (here https://github.com/samsamlh/android-sdk), and the directory where you want to save the SDK, then click 'Clone'.
+
+![Clone_repo](images/2_clone_repo.png)
+
+3. Click 'Yes'. 
+
+![Click_Yes](images/3_click_yes.png)
+
+4. On the top right of the screen, click 'Gradle'. 
+
+![Click_Gradle](images/4_top_right_click_gradle.png)
+
+5. Click 'Other', then double click 'assembleRelease' to create the .aar file. 
+
+![Click_Gradle](images/5_click_other_and_assembleRelease.png)
+
+6. To get the .aar file, open the path : EMSMobileSDK\build\outputs\aar (directory point 2)
+
+![Click_Gradle](images/6_get_aar_file_rdy_for_integration.png)
+
 ## Integrate the SDK with an App
 
 Back in Android Studio with the project open, you can now add the SDK to the App.
