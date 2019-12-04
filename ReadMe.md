@@ -47,7 +47,7 @@ This Application ID is needed to register a new app with Firebase.
 
 A Firebase project is a collection of apps that can use a variety of Google API's including push notifications. If you do not already have a Firebase project you intend to use with push notifications, you'll need to create one. Othewise, select the project and proceed to **Register an App on Firebase**.
 
-1. Go to https://consoled.firebase.google.com and logon to Firebase with a Google account
+1. Go to https://console.firebase.google.com and logon to Firebase with a Google account
 
 2. Select **Create a New Project**.
 
