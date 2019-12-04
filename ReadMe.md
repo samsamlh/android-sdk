@@ -71,7 +71,7 @@ A Firebase project is a collection of apps that can use a variety of Google API'
 
 6. In Android Studio, open the Project Gradle script labeled **build.gradle (Project: yourProject)** and add **classpath 'com.google.gms:google-services:4.3.2'** the to the project dependencies.
 
-```json
+```
     dependencies {
         classpath 'com.android.tools.build:gradle:3.5.0'
         classpath 'com.google.gms:google-services:4.3.2'
@@ -82,7 +82,7 @@ A Firebase project is a collection of apps that can use a variety of Google API'
 
 7. Open the App Module Gradle script labeled **build.gradle (Module: app)** and add the following dependencies to the bottom of the app dependencies section.
 
-```json
+```
    implementation 'com.android.volley:volley:1.1.1'
    implementation group: 'commons-io', name: 'commons-io', version: '2.5'
    implementation 'com.google.firebase:firebase-messaging:20.0.0'
@@ -90,7 +90,7 @@ A Firebase project is a collection of apps that can use a variety of Google API'
 
 8. Add **apply plugin: 'com.google.gms.google-services'** to the very bottom othe App Module Gradle file. The App Module Gradle script should look something like this at the end.
 
-```json
+```
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'androidx.appcompat:appcompat:1.0.2'
